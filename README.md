@@ -1,26 +1,4 @@
-# JavaFX Project Template
-
-Proyecto base en Eclipse para Maven con soporte para JavaFX 11.
-
-1. Descargar y entrar en el directorio del proyecto:
-
-```bash
-git clone https://github.com/dam-dad/JavaFXProjectTemplate.git
-cd JavaFXProjectTemplate
-```
-
-2. Desconectar el proyecto de GIT:
-
-- Desde la BASH en GNU/Linux o Mac OS X:
-
-```bash
-rm -fr .git
-```
-
-- Desde CMD en Windows:
-
-```bash
-rmdir /s /q .git
-```
-
-3. Importar el proyecto en Eclipse y empezar a trabajar.
+Implementar una aplicación JavaFX que para la creación y edición de currículums vitae. 
+La aplicación recogerá toda la información de una persona. 
+En una versión futura de la aplicación podremos exportar la información que queramos en formato PDF.
+La información de los CV se deberá almacenar en ficheros JSON con extensión ".cv". Se deberá utilizar el framework FxGson para la persistencia de los currículums.
