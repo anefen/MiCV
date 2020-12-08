@@ -57,6 +57,8 @@ public class PersonalController implements Initializable {
 
 	@FXML
 	private Button quitarNacionalidadButton;
+	
+	
 
 	public PersonalController() throws IOException {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/personalView.fxml"));
@@ -67,35 +69,35 @@ public class PersonalController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
-		personal.addListener((o, ov, nv) -> onPersonalChanged(o, ov, nv));
+	//	personal.addListener((o, ov, nv) -> onPersonalChanged(o, ov, nv));
 		
 	}
 	
-	private void onPersonalChanged(ObservableValue<? extends PersonalModel> o, PersonalModel ov, PersonalModel nv) {
-
-		System.out.println("ov=" + ov + "/nv=" + nv);
-		
-		if (ov != null) {
-			
-			identificacionText.textProperty().unbindBidirectional(ov.identificacionProperty());
-			nombreText.textProperty().unbindBidirectional(ov.nombreProperty());
-			apellidosText.textProperty().unbindBidirectional(ov.apellidosProperty());
-			fechaNacimientoDate.valueProperty().unbindBidirectional(ov.fechaNacimientoProperty());
-			// TODO desbindear el resto de propiedades
-			
-		}
-		
-		if (nv != null) {
-			
-			identificacionText.textProperty().bindBidirectional(nv.identificacionProperty());
-			nombreText.textProperty().bindBidirectional(nv.nombreProperty());
-			apellidosText.textProperty().bindBidirectional(nv.apellidosProperty());
-			fechaNacimientoDate.valueProperty().bindBidirectional(nv.fechaNacimientoProperty());
-			// TODO bindear el resto de propiedades			
-			
-		}
-		
-	}
+//	private void onPersonalChanged(ObservableValue<? extends PersonalModel> o, PersonalModel ov, PersonalModel nv) {
+//
+//		System.out.println("ov=" + ov + "/nv=" + nv);
+//		
+//		if (ov != null) {
+//			
+//			identificacionText.textProperty().unbindBidirectional(ov.identificacionProperty());
+//			nombreText.textProperty().unbindBidirectional(ov.nombreProperty());
+//			apellidosText.textProperty().unbindBidirectional(ov.apellidosProperty());
+//			fechaNacimientoDate.valueProperty().unbindBidirectional(ov.fechaNacimientoProperty());
+//			// TODO desbindear el resto de propiedades
+//			
+//		}
+//		
+//		if (nv != null) {
+//			
+//			identificacionText.textProperty().bindBidirectional(nv.identificacionProperty());
+//			nombreText.textProperty().bindBidirectional(nv.nombreProperty());
+//			apellidosText.textProperty().bindBidirectional(nv.apellidosProperty());
+//			fechaNacimientoDate.valueProperty().bindBidirectional(nv.fechaNacimientoProperty());
+//			// TODO bindear el resto de propiedades			
+//			
+//		}
+//		
+//	}
 
 	public GridPane getView() {
 		return view;
@@ -110,7 +112,16 @@ public class PersonalController implements Initializable {
 	void onQuitarNacionalidadAction(ActionEvent event) {
 
 	}
+	
+    @FXML
+    void onAddAction(ActionEvent event) {
 
+    }
+
+    @FXML
+    void onDeleteAction(ActionEvent event) {
+
+    }
 	public final ObjectProperty<PersonalModel> personalProperty() {
 		return this.personal;
 	}
