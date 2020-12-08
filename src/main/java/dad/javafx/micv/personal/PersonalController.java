@@ -1,10 +1,10 @@
 package dad.javafx.micv.personal;
 
-import dad.javafx.micv.model.Nacionalidad;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import dad.javafx.micv.Nacionalidad;
 import javafx.beans.property.*;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;

@@ -1,103 +1,122 @@
 package dad.javafx.micv.contacto;
 
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javafx.beans.property.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 
-public class ContactoController {
-	
+public class ContactoController implements Initializable {
 
-	    @FXML
-	    private SplitPane root;
+	private ObjectProperty<ContactoModel> contacto = new SimpleObjectProperty<>();
 
-	    @FXML
-	    private TitledPane telefonoPane;
+	public ContactoController() throws IOException {
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/contactoView.fxml"));
+		loader.setController(this);
+		loader.load();
+	}
 
-	    @FXML
-	    private HBox telefonoBox;
+	public SplitPane getView() {
+		return root;
+	}
 
-	    @FXML
-	    private TableView<?> telefonoView;
+	@FXML
+	private SplitPane root;
 
-	    @FXML
-	    private TableColumn<?, ?> telNumeroColumn;
+	@FXML
+	private TitledPane telefonoPane;
 
-	    @FXML
-	    private TableColumn<?, ?> telTipoColumn;
+	@FXML
+	private HBox telefonoBox;
 
-	    @FXML
-	    private Button addTelButton;
+	@FXML
+	private TableView<Telefono> telefonoView;
 
-	    @FXML
-	    private Button deleteTelbutton;
+	@FXML
+	private TableColumn<Telefono, String> telNumeroColumn;
 
-	    @FXML
-	    private TitledPane direccionPane;
+	@FXML
+	private TableColumn<Telefono, TipoTelefono> telTipoColumn;
 
-	    @FXML
-	    private HBox direccionBox;
+	@FXML
+	private Button addTelButton;
 
-	    @FXML
-	    private TableView<?> direccionView;
+	@FXML
+	private Button deleteTelbutton;
 
-	    @FXML
-	    private TableColumn<?, ?> dirNumeroColumn;
+	@FXML
+	private TitledPane direccionPane;
 
-	    @FXML
-	    private TableColumn<?, ?> dirTipoColumn;
+	@FXML
+	private HBox direccionBox;
 
-	    @FXML
-	    private Button addDirButton;
+	@FXML
+	private TableView<Email> direccionView;
 
-	    @FXML
-	    private Button deleteDirButton;
+	@FXML
+	private TableColumn<Email, String> emailColumn;
 
-	    @FXML
-	    private TitledPane webPane;
+	@FXML
+	private Button addDirButton;
 
-	    @FXML
-	    private TableView<?> webView;
+	@FXML
+	private Button deleteDirButton;
 
-	    @FXML
-	    private TableColumn<?, ?> urlColumn;
+	@FXML
+	private TitledPane webPane;
 
-	    @FXML
-	    private Button addWebButton;
+	@FXML
+	private TableView<Web> webView;
 
-	    @FXML
-	    private Button deleteWebButton;
+	@FXML
+	private TableColumn<Web, String> urlColumn;
 
-	    @FXML
-	    void onAddDirAction(ActionEvent event) {
+	@FXML
+	private Button addWebButton;
 
-	    }
+	@FXML
+	private Button deleteWebButton;
 
-	    @FXML
-	    void onAddTelAction(ActionEvent event) {
-
-	    }
-
-	    @FXML
-	    void onAddWebAction(ActionEvent event) {
-
-	    }
-
-	    @FXML
-	    void onDeleteDirAction(ActionEvent event) {
-
-	    }
-
-	    @FXML
-	    void onDeleteTelAction(ActionEvent event) {
-
-	    }
-
-	    @FXML
-	    void onDeleteWebAction(ActionEvent event) {
-
-	    }
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
 
 	}
 
+	@FXML
+	void onAddDirAction(ActionEvent event) {
 
+	}
+
+	@FXML
+	void onAddTelAction(ActionEvent event) {
+
+	}
+
+	@FXML
+	void onAddWebAction(ActionEvent event) {
+
+	}
+
+	@FXML
+	void onDeleteDirAction(ActionEvent event) {
+
+	}
+
+	@FXML
+	void onDeleteTelAction(ActionEvent event) {
+
+	}
+
+	@FXML
+	void onDeleteWebAction(ActionEvent event) {
+
+	}
+
+}

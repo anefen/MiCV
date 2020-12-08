@@ -2,15 +2,9 @@ package dad.javafx.micv.personal;
 
 import java.time.LocalDate;
 
-import dad.javafx.micv.model.Nacionalidad;
-import javafx.beans.property.ListProperty;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleListProperty;
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import dad.javafx.micv.Nacionalidad;
+import javafx.beans.property.*;
+import javafx.collections.*;
 
 public class PersonalModel {
 
