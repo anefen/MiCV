@@ -4,12 +4,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.*;
+
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
+import javafx.fxml.*;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 
@@ -17,7 +16,7 @@ public class ConocimientoController implements Initializable {
 
 	
 	
-	private ObjectProperty<ConocimientoModel> conocimiento = new SimpleObjectProperty<>();
+	private ListProperty<ConocimientoModel> conocimiento = new SimpleListProperty<>();
 
 	
 	
@@ -69,5 +68,25 @@ public class ConocimientoController implements Initializable {
 		// TODO Auto-generated method stub
 		
 	}
+
+	public final ListProperty<ConocimientoModel> conocimientoProperty() {
+		return this.conocimiento;
+	}
+	
+
+	public final ObservableList<ConocimientoModel> getConocimiento() {
+		return this.conocimientoProperty().get();
+	}
+	
+
+	public final void setConocimiento(final ObservableList<ConocimientoModel> conocimiento) {
+		this.conocimientoProperty().set(conocimiento);
+	}
+	
+
+
+
+	
+	
 
 }

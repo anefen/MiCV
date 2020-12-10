@@ -9,15 +9,18 @@ public class ContactoModel {
 	private ListProperty<Email> email = new SimpleListProperty<Email>(FXCollections.observableArrayList());
 	private ListProperty<Web> web = new SimpleListProperty<Web>(FXCollections.observableArrayList());
 
-	public final ListProperty<Telefono> telefonoProperty() {
-		return this.telefono;
+	public ContactoModel() {
 	}
-
 	public ContactoModel(ListProperty<Telefono> telefono, ListProperty<Email> email, ListProperty<Web> web) {
 		this.telefono = telefono;
 		this.email = email;
 		this.web = web;
 	}
+	public final ListProperty<Telefono> telefonoProperty() {
+		return this.telefono;
+	}
+
+
 
 	public final ObservableList<Telefono> getTelefono() {
 		return this.telefonoProperty().get();

@@ -11,6 +11,8 @@ public class FormacionModel {
 	private StringProperty denominacion = new SimpleStringProperty();
 	private StringProperty organizador = new SimpleStringProperty();
 	
+	public FormacionModel() {
+	}
 	
 	public FormacionModel(ObjectProperty<LocalDate> desde, ObjectProperty<LocalDate> hasta, StringProperty denominacion,
 			StringProperty organizador) {

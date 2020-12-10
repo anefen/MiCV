@@ -6,6 +6,9 @@ public class Email {
 
 	private StringProperty direccion = new SimpleStringProperty();
 
+	public Email() {
+	}
+	
 	public Email(StringProperty direccion) {
 		this.direccion = direccion;
 	}

@@ -2,26 +2,29 @@ package dad.javafx.micv.personal;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 import dad.javafx.micv.Nacionalidad;
+import dad.javafx.micv.contacto.TipoTelefono;
 import javafx.beans.property.*;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.ComboBoxTableCell;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.GridPane;
 
 
 public class PersonalController implements Initializable {
 
-	// model
 
 	private ObjectProperty<PersonalModel> personal = new SimpleObjectProperty<>();
-
-	// view
-
+	private ListProperty<Nacionalidad> nacionalidad = new SimpleListProperty<>();
+	
 	@FXML
 	private GridPane view;
 
@@ -68,36 +71,33 @@ public class PersonalController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-
-	//	personal.addListener((o, ov, nv) -> onPersonalChanged(o, ov, nv));
 		
+	
 	}
 	
-//	private void onPersonalChanged(ObservableValue<? extends PersonalModel> o, PersonalModel ov, PersonalModel nv) {
-//
-//		System.out.println("ov=" + ov + "/nv=" + nv);
-//		
-//		if (ov != null) {
-//			
-//			identificacionText.textProperty().unbindBidirectional(ov.identificacionProperty());
-//			nombreText.textProperty().unbindBidirectional(ov.nombreProperty());
-//			apellidosText.textProperty().unbindBidirectional(ov.apellidosProperty());
-//			fechaNacimientoDate.valueProperty().unbindBidirectional(ov.fechaNacimientoProperty());
-//			// TODO desbindear el resto de propiedades
-//			
-//		}
-//		
-//		if (nv != null) {
-//			
-//			identificacionText.textProperty().bindBidirectional(nv.identificacionProperty());
-//			nombreText.textProperty().bindBidirectional(nv.nombreProperty());
-//			apellidosText.textProperty().bindBidirectional(nv.apellidosProperty());
-//			fechaNacimientoDate.valueProperty().bindBidirectional(nv.fechaNacimientoProperty());
-//			// TODO bindear el resto de propiedades			
-//			
-//		}
-//		
-//	}
+	private void onPersonalChanged(ObservableValue<? extends PersonalModel> o, PersonalModel ov, PersonalModel nv) {
+
+		System.out.println("ov=" + ov + "/nv=" + nv);
+		
+		if (ov != null) {
+			
+			identificacionText.textProperty().unbindBidirectional(ov.identificacionProperty());
+			nombreText.textProperty().unbindBidirectional(ov.nombreProperty());
+			apellidosText.textProperty().unbindBidirectional(ov.apellidosProperty());
+			fechaNacimientoDate.valueProperty().unbindBidirectional(ov.fechaNacimientoProperty());
+			
+		}
+		
+		if (nv != null) {
+			
+			identificacionText.textProperty().bindBidirectional(nv.identificacionProperty());
+			nombreText.textProperty().bindBidirectional(nv.nombreProperty());
+			apellidosText.textProperty().bindBidirectional(nv.apellidosProperty());
+			fechaNacimientoDate.valueProperty().bindBidirectional(nv.fechaNacimientoProperty());
+			
+		}
+		
+	}
 
 	public GridPane getView() {
 		return view;

@@ -5,14 +5,10 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-import dad.javafx.micv.formacion.FormacionModel;
-import javafx.beans.property.ListProperty;
-import javafx.beans.property.SimpleListProperty;
-import javafx.collections.FXCollections;
+import javafx.beans.property.*;
+import javafx.collections.*;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
+import javafx.fxml.*;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 
@@ -73,6 +69,21 @@ public class ExperienciaController implements Initializable{
 			// TODO Auto-generated method stub
 			
 		}
+
+		public final ListProperty<ExperienciaModel> experienciaProperty() {
+			return this.experiencia;
+		}
+		
+
+		public final ObservableList<ExperienciaModel> getExperiencia() {
+			return this.experienciaProperty().get();
+		}
+		
+
+		public final void setExperiencia(final ObservableList<ExperienciaModel> experiencia) {
+			this.experienciaProperty().set(experiencia);
+		}
+		
 
 	}
 

@@ -3,13 +3,8 @@ package dad.javafx.micv.main;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
 import java.util.ResourceBundle;
 
-import org.apache.commons.io.FileUtils;
-import org.hildan.fxgson.FxGson;
-
-import com.google.gson.Gson;
 
 import dad.javafx.micv.*;
 import dad.javafx.micv.conocimiento.ConocimientoController;
@@ -122,16 +117,23 @@ public class MainController implements Initializable {
 
 		if (ov != null) {
 
-			personalController.personalProperty().unbind(); // desbindeo personalProperty del CV anterior
-			// desbindear resto de controllers
+			personalController.personalProperty().unbind();
+			contactoController.contactoProperty().unbind();
+			formacionController.formacionProperty().unbind();
+			experienciaController.experienciaProperty().unbind();
+			conocimientoController.conocimientoProperty().unbind();
 
 		}
 
 		if (nv != null) {
 
-			personalController.personalProperty().bind(nv.personalProperty()); // bindeo personalProperty del nuevo CV
-			// bindear resto de controllers
+			personalController.personalProperty().bind(nv.personalProperty()); 
+			contactoController.contactoProperty().bind(nv.contactoProperty()); 
+			formacionController.formacionProperty().bind(nv.formacionProperty()); 
+			experienciaController.experienciaProperty().bind(nv.experienciaProperty()); 
+			conocimientoController.conocimientoProperty().bind(nv.conocimientoProperty()); 
 
+		
 		}
 
 	}

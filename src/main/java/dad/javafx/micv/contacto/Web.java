@@ -6,6 +6,9 @@ public class Web {
 
 	private StringProperty url = new SimpleStringProperty();
 
+	public Web() {
+	}
+	
 	public Web(StringProperty url) {
 		this.url = url;
 	}

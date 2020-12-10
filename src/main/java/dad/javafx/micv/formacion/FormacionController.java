@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 import javafx.beans.property.*;
-import javafx.collections.FXCollections;
+import javafx.collections.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.control.*;
@@ -58,7 +58,7 @@ public class FormacionController implements Initializable {
 
 	@FXML
 	void onAddFormAction(ActionEvent event) {
-
+		
 	}
 
 	@FXML
@@ -71,5 +71,20 @@ public class FormacionController implements Initializable {
 		// TODO Auto-generated method stub
 		
 	}
+
+	public final ListProperty<FormacionModel> formacionProperty() {
+		return this.formacion;
+	}
+	
+
+	public final ObservableList<FormacionModel> getFormacion() {
+		return this.formacionProperty().get();
+	}
+	
+
+	public final void setFormacion(final ObservableList<FormacionModel> formacion) {
+		this.formacionProperty().set(formacion);
+	}
+	
 
 }
